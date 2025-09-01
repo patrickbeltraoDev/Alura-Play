@@ -1,0 +1,16 @@
+{
+    "name": "patrick/alura-play",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Patrick\\AluraPlay\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Patrick Beltrão",
+            "email": "patrick.beltrao@outlook.com"
+        }
+    ],
+    "require": {}
+}
