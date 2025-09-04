@@ -1,7 +1,11 @@
 <?php
 
-require "/conexao.php";
+require "conexao.php";
 
-$sql = "INSERT INTO videos (url, title) VALUES (:url, :titulo)";
+$sql = "INSERT INTO aluraplay.videos (url, title) VALUES (?, ?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([":url"=> $_POST["name"], ":titulo"=> $_POST["titulo"]]);
+$stmt->bindValue(1, $_POST["url"]);
+$stmt->bindValue(2, $_POST["titulo"]);
+$stmt->execute();
+
+header('Location: index.php');
