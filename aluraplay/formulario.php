@@ -47,11 +47,13 @@ if ($id !== false) {
 
     <main class="container">
 
-        <form class="container__formulario" action="../novo-video.php" method="POST">
+        <form class="container__formulario" 
+            action="<?= $id !== false ? '/editar-video.php' : '/novo-video.php?id=' . $id; ?>" method="POST">
             <h2 class="formulario__titulo">Envie um vídeo!</h2>
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="url">Link embed</label>
-                    <input name="url" class="campo__escrita" required
+                    <input name="url" class="campo__escrita" 
+                        required value="<?= $video['url']?>"
                         placeholder="Por exemplo: https://www.youtube.com/embed/FAY1K2aUg5g" id='url' />
                 </div>
 
